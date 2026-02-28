@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+
+# Ignore test generation scripts or test data if they are outputted
+gemini_prompt_context.md
+documentation.md
+
+# Ignore firebase cache if user ever uses option 1
+.firebase/
+.firebaserc

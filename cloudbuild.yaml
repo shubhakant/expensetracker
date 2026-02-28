@@ -1,0 +1,13 @@
+steps:
+# Copy all static web files from the repository to the GCP Bucket
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: 
+    - '-m'
+    - 'rsync'
+    - '-R'
+    - '.'
+    - 'gs://your-bucket-name'
+  
+  # Note: The .gitignore and cloudbuild.yaml files will technically be copied to the bucket.
+  # If you want to ONLY copy the static assets, you could create a `public` folder and move your HTML/CSS/JS files there,
+  # and update the args above to read: ['-m', 'rsync', '-R', 'public/', 'gs://your-bucket-name']
