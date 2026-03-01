@@ -6,7 +6,7 @@ steps:
     - 'rsync'
     - '-R'
     - '.'
-    - 'gs://expense-tracker-bucket-5702-web'
+    - 'gs://expense-tracker-bucket-5702-mumbai'
   
   # Note: The .gitignore and cloudbuild.yaml files will technically be copied to the bucket.
   # If you want to ONLY copy the static assets, you could create a `public` folder and move your HTML/CSS/JS files there,
