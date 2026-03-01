@@ -6,8 +6,15 @@ steps:
     - 'rsync'
     - '-R'
     - '.'
-    - 'gs://your-bucket-name'
+    - 'gs://expense-tracker-bucket-5702-web'
   
   # Note: The .gitignore and cloudbuild.yaml files will technically be copied to the bucket.
   # If you want to ONLY copy the static assets, you could create a `public` folder and move your HTML/CSS/JS files there,
   # and update the args above to read: ['-m', 'rsync', '-R', 'public/', 'gs://your-bucket-name']
+
+# Force Cloud Build to use Cloud Logging instead of trying to write to a default storage bucket
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+# Bind the pipeline to our custom least-privilege service account
+serviceAccount: 'projects/expense-tracker-5702/serviceAccounts/cloud-build-deployer@expense-tracker-5702.iam.gserviceaccount.com'
