@@ -18,7 +18,7 @@ provider "google" {
 # 2. Define the exact name of your bucket (must be globally unique)
 variable "bucket_name" {
   type    = string
-  default = "expense-tracker-bucket-5702-mumbai"
+  default = "expense-tracker-bucket-5702"
 }
 
 # 3. Create the Google Cloud Storage Bucket
