@@ -8,3 +8,10 @@ documentation.md
 # Ignore firebase cache if user ever uses option 1
 .firebase/
 .firebaserc
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+.gcp_project_id
