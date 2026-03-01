@@ -5,6 +5,7 @@ steps:
     - '-m'
     - 'rsync'
     - '-R'
+    - '-d'
     - 'public/'
     - 'gs://expense-tracker-bucket-5702'
   
