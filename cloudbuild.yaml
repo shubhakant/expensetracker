@@ -5,7 +5,7 @@ steps:
     - '-m'
     - 'rsync'
     - '-R'
-    - '.'
+    - 'public/'
     - 'gs://expense-tracker-bucket-5702'
   
   # Note: The .gitignore and cloudbuild.yaml files will technically be copied to the bucket.

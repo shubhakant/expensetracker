@@ -59,21 +59,21 @@ resource "google_storage_bucket_iam_member" "cloudbuild_deployer" {
 # 5. Upload your website files
 resource "google_storage_bucket_object" "index_html" {
   name         = "index.html"
-  source       = "./index.html"
+  source       = "./public/index.html"
   content_type = "text/html"
   bucket       = google_storage_bucket.website_bucket.name
 }
 
 resource "google_storage_bucket_object" "style_css" {
   name         = "style.css"
-  source       = "./style.css"
+  source       = "./public/style.css"
   content_type = "text/css"
   bucket       = google_storage_bucket.website_bucket.name
 }
 
 resource "google_storage_bucket_object" "script_js" {
   name         = "script.js"
-  source       = "./script.js"
+  source       = "./public/script.js"
   content_type = "application/javascript"
   bucket       = google_storage_bucket.website_bucket.name
 }
