@@ -12,7 +12,7 @@ terraform {
 # 1. Update this with your actual Google Cloud Project ID
 provider "google" {
   project = "expense-tracker-5702"
-  region  = "asia-south1"
+  region  = "us-central1"
 }
 
 # 2. Define the exact name of your bucket (must be globally unique)
@@ -24,7 +24,7 @@ variable "bucket_name" {
 # 3. Create the Google Cloud Storage Bucket
 resource "google_storage_bucket" "website_bucket" {
   name          = var.bucket_name
-  location      = "asia-south1"
+  location      = "us-central1"
   force_destroy = true # Allows Terraform to delete the bucket even if it contains files
 
   website {
@@ -52,7 +52,7 @@ resource "google_storage_bucket_iam_binding" "public_rule" {
 # Grant Cloud Build service account write access to the new bucket
 resource "google_storage_bucket_iam_member" "cloudbuild_deployer" {
   bucket = google_storage_bucket.website_bucket.name
-  role   = "roles/storage.objectAdmin"
+  role   = "roles/storage.admin"
   member = "serviceAccount:cloud-build-deployer@expense-tracker-5702.iam.gserviceaccount.com"
 }
 
